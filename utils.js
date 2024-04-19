@@ -23,7 +23,7 @@ async function getWeather(latitude, longitude) {
   const response = await axios.get(url);
 
   const data = response.data.current;
-  return `${data.condition.text}. Temperature is ${data.temp_c} degrees outside, and it feels like ${data.feelslike_c} degrees`;
+  return `${data.condition.text}. Temperature is ${data.temp_c} degrees outside.`;
 }
 
 module.exports = { getGeocode, getWeather };
