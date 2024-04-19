@@ -2,6 +2,7 @@ const express = require("express");
 const { getGeocode, getWeather } = require("./utils.js");
 
 const app = express();
+const port = process.env.PORT || 3000;
 
 app.get("/", (req, res) => {
   res.send("Welcome to Weather App!");
@@ -25,6 +26,6 @@ app.get("*", (req, res) => {
   res.send("Page not found");
 });
 
-app.listen(3000, () => {
-  console.log(`Server is running at http://localhost:3000/`);
+app.listen(port, () => {
+  console.log(`Server is listening on port ${port}`);
 });
